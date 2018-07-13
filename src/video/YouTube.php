@@ -2,8 +2,6 @@
 
 namespace Embryo\Embed\Video;
 
-use Embryo\Embed\Embed;
-
-class YouTube extends Embed
+class YouTube extends Video
 {
 }
