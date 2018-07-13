@@ -1,0 +1,17 @@
+{
+  "name": "embryo/embed",
+  "type": "library",
+  "license": "WTFPL",
+  "authors": [
+    {
+      "name": "Marc Brillault",
+      "email": "marc@brillault.fr"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-0": {
+      "Embryo\\Embed": "src"
+    }
+  }
+}
