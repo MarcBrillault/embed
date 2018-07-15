@@ -26,15 +26,6 @@ abstract class EmbedRoot implements EmbedInterface
      */
     protected $template;
 
-    /**
-     * @var array
-     */
-    private $availableTemplateKeys = [
-        'id',
-        'width',
-        'height',
-    ];
-
     public final function __construct() { }
 
     /**
@@ -64,7 +55,7 @@ abstract class EmbedRoot implements EmbedInterface
     protected function setEmbedCode()
     {
         $replaces = [];
-        foreach ($this->availableTemplateKeys as $key) {
+        foreach ($this->getTemplateKeys() as $key) {
             $templateKey = $this->transformToTemplateKey($key);
             $methodName  = $this->getMethodNameFromKey($key);
             if (
@@ -115,5 +106,15 @@ abstract class EmbedRoot implements EmbedInterface
     private function getMethodNameFromKey(string $key): string
     {
         return 'get' . ucfirst($key);
+    }
+
+    /**
+     * @return array[string]
+     */
+    private function getTemplateKeys(): array
+    {
+        preg_match_all('#\{([A-Z]+)\}#', $this->template, $matches);
+
+        return array_map('strtolower', $matches[1]);
     }
 }
