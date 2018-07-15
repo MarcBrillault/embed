@@ -10,8 +10,11 @@
   ],
   "require": {},
   "autoload": {
-    "psr-0": {
-      "Embryo\\Embed": "src"
+    "psr-4": {
+      "Embryo\\Embed\\": "src"
     }
+  },
+  "scripts": {
+    "post-autoload-dump": "Embryo\\Embed\\Installer::writeCacheFile"
   }
 }
