@@ -12,7 +12,7 @@ class YouTube extends Video
         '#^https?://www\.youtube\.com/embed/([a-zA-Z0-9]+)#',
     ];
 
-    protected $template = <<<'CODE'
+    protected $template = <<<'TEMPLATE'
 <iframe
     width="{WIDTH}"
     height="{HEIGHT}"
@@ -21,5 +21,5 @@ class YouTube extends Video
     allow="autoplay; encrypted-media"
     allowfullscreen>
 </iframe>
-CODE;
+TEMPLATE;
 }
