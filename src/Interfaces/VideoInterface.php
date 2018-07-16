@@ -4,9 +4,33 @@ namespace Embryo\Embed\Interfaces;
 
 interface VideoInterface
 {
-    public function setWidth(int $width);
+    /**
+     * @param int $width
+     */
+    public function setWidth($width);
 
-    public function setHeight(int $height);
+    /**
+     * @return int
+     */
+    public function getWidth();
 
-    public function setRatio(float $ratio);
+    /**
+     * @param int $height
+     */
+    public function setHeight($height);
+
+    /**
+     * @return int
+     */
+    public function getHeight();
+
+    /**
+     * @param float $ratio
+     */
+    public function setRatio($ratio);
+
+    /**
+     * @return float
+     */
+    public function getRatio();
 }

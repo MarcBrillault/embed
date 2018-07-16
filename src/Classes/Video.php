@@ -28,7 +28,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
     /**
      * @param int $width
      */
-    public function setWidth(int $width)
+    public function setWidth($width)
     {
         $this->width = $width;
     }
@@ -36,7 +36,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
     /**
      * @return int
      */
-    public function getWidth(): int
+    public function getWidth()
     {
         if ($this->width) {
             return $this->width;
@@ -51,7 +51,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
     /**
      * @param int $height
      */
-    public function setHeight(int $height)
+    public function setHeight($height)
     {
         $this->height = $height;
     }
@@ -59,7 +59,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
     /**
      * @return int
      */
-    public function getHeight(): int
+    public function getHeight()
     {
         if ($this->height) {
             return $this->height;
@@ -68,7 +68,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
         return round($this->getWidth() / $this->getRatio());
     }
 
-    public function setRatio(float $ratio)
+    public function setRatio($ratio)
     {
         $this->ratio = $ratio;
     }
@@ -76,7 +76,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
     /**
      * @return float
      */
-    public function getRatio(): float
+    public function getRatio()
     {
         return $this->ratio ?: getenv('EMBED_RATIO') ?: self::DEFAULT_RATIO;
     }

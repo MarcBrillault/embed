@@ -39,7 +39,7 @@ abstract class EmbedRoot implements EmbedInterface
     /**
      * @param string $id
      */
-    public function setId(string $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -72,7 +72,7 @@ abstract class EmbedRoot implements EmbedInterface
     /**
      * @return string
      */
-    public function getEmbedCode(): string
+    public function getEmbedCode()
     {
         if (!$this->embedCode) {
             $this->setEmbedCode();
@@ -85,7 +85,7 @@ abstract class EmbedRoot implements EmbedInterface
      * @param string $key
      * @return bool
      */
-    private function isInTemplate(string $key): bool
+    private function isInTemplate($key)
     {
         return strpos($this->template, $this->transformToTemplateKey($key)) !== false;
     }
@@ -94,7 +94,7 @@ abstract class EmbedRoot implements EmbedInterface
      * @param string $key
      * @return string
      */
-    private function transformToTemplateKey(string $key): string
+    private function transformToTemplateKey($key)
     {
         return sprintf('{%s}', strtoupper($key));
     }
@@ -103,7 +103,7 @@ abstract class EmbedRoot implements EmbedInterface
      * @param string $key
      * @return string
      */
-    private function getMethodNameFromKey(string $key): string
+    private function getMethodNameFromKey($key)
     {
         return 'get' . ucfirst($key);
     }
@@ -111,7 +111,7 @@ abstract class EmbedRoot implements EmbedInterface
     /**
      * @return array[string]
      */
-    private function getTemplateKeys(): array
+    private function getTemplateKeys()
     {
         preg_match_all('#\{([A-Z]+)\}#', $this->template, $matches);
 

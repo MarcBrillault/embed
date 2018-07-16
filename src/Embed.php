@@ -16,15 +16,22 @@ class Embed
      */
     private $regexpCache;
 
-    public function __construct(string $url)
+    /**
+     * Embed constructor.
+     *
+     * @param string $url
+     */
+    public function __construct($url = '')
     {
-        $this->setUrl($url);
+        if ($url) {
+            $this->setUrl($url);
+        }
     }
 
     /**
      * @param string $url
      */
-    public function setUrl(string $url)
+    public function setUrl($url)
     {
         $this->url = $url;
     }
@@ -32,7 +39,7 @@ class Embed
     /**
      * @return string
      */
-    public function getUrl(): string
+    public function getUrl()
     {
         return $this->url;
     }
@@ -41,7 +48,7 @@ class Embed
      * @return string
      * @throws \Embryo\Embed\Exceptions\EmbedException
      */
-    public function getEmbeddedCode(): string
+    public function getEmbeddedCode()
     {
         foreach ($this->getRegexpCache() as $regexp => $className) {
             if (preg_match($regexp, $this->url, $matches)) {
@@ -59,7 +66,7 @@ class Embed
      * @param string $class
      * @return \Embryo\Embed\EmbedRoot
      */
-    private function getClass(string $class): EmbedRoot
+    private function getClass($class)
     {
         return new $class();
     }

@@ -14,7 +14,7 @@ class Installer
     const CACHE_FILENAME = 'regexpCache.json';
     const DIR_NAME       = '/classes';
 
-    private function setRegexpList(): void
+    private function setRegexpList()
     {
         $paths = $this->getFilePaths();
         foreach ($paths as $path) {
@@ -49,7 +49,7 @@ class Installer
      * @param array  $paths
      * @return array
      */
-    private function getFilePaths(string $dirName = '', array $paths = []): array
+    private function getFilePaths($dirName = '', array $paths = [])
     {
         $rootDirName = __DIR__ . self::DIR_NAME;
         $dirName     = $dirName ?: $rootDirName;
@@ -71,7 +71,7 @@ class Installer
      * @param string $regexp
      * @param string $className
      */
-    private function addToRegexpList(string $regexp, string $className): void
+    private function addToRegexpList($regexp, $className)
     {
         $this->regexpList[$regexp] = $className;
     }
@@ -79,7 +79,7 @@ class Installer
     /**
      * @return bool
      */
-    public static function writeCacheFile(): bool
+    public static function writeCacheFile()
     {
         $installer = new self();
         $installer->setRegexpList();
@@ -96,7 +96,7 @@ class Installer
     /**
      * @return string
      */
-    public static function getCacheFilePath(): string
+    public static function getCacheFilePath()
     {
         return __DIR__ . '/' . self::CACHE_FILENAME;
     }
