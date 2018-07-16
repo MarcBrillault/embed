@@ -34,7 +34,7 @@ Will display :
 
 ## Configuration
 
-Some of the default values can be overrided by editing the correct env value.
+Some of the default values can be overridden by editing the correct env value.
 
 We strongly suggest using [phpdotenv](https://github.com/vlucas/phpdotenv) to do so.
 
