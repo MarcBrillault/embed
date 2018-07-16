@@ -1,6 +1,6 @@
 <?php
 
-namespace Embryo\Embed\Interfaces;
+namespace Embryo\Interfaces;
 
 interface EmbedInterface
 {

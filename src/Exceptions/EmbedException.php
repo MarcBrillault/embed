@@ -1,6 +1,6 @@
 <?php
 
-namespace Embryo\Embed\Exceptions;
+namespace Embryo\Exceptions;
 
 class EmbedException extends \Exception
 {

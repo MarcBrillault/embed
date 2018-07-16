@@ -1,8 +1,8 @@
 <?php
 
-namespace Embryo\Embed;
+namespace Embryo;
 
-use Embryo\Embed\Exceptions\EmbedException;
+use Embryo\Exceptions\EmbedException;
 
 class Embed
 {
@@ -46,7 +46,7 @@ class Embed
 
     /**
      * @return string
-     * @throws \Embryo\Embed\Exceptions\EmbedException
+     * @throws \Embryo\Exceptions\EmbedException
      */
     public function getEmbeddedCode()
     {
@@ -85,9 +85,9 @@ class Embed
 
     private function setRegexpCache()
     {
-        $filePath = Installer::getCacheFilePath();
+        $filePath = EmbedInstaller::getCacheFilePath();
         if (!is_file($filePath)) {
-            Installer::writeCacheFile();
+            EmbedInstaller::writeCacheFile();
         }
 
         $this->regexpCache = json_decode(file_get_contents($filePath));

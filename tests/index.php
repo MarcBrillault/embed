@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-\Embryo\Embed\Installer::writeCacheFile();
+\Embryo\EmbedInstaller::writeCacheFile();
 
 $urls = [
     'https://www.youtube.com/watch?v=Us6TDxO9ItM',
@@ -11,10 +11,10 @@ $urls = [
 ];
 
 foreach ($urls as $url) {
-    $embed = new \Embryo\Embed\Embed($url);
+    $embed = new \Embryo\Embed($url);
     try {
         echo $embed->getEmbeddedCode();
-    } catch (\Embryo\Embed\Exceptions\EmbedException $e) {
+    } catch (\Embryo\Exceptions\EmbedException $e) {
         echo $e->getMessage() . '<br>';
     }
 }

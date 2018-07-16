@@ -1,9 +1,9 @@
 <?php
 
-namespace Embryo\Embed\Classes;
+namespace Embryo\Classes;
 
-use Embryo\Embed\EmbedRoot;
-use Embryo\Embed\Interfaces\VideoInterface;
+use Embryo\EmbedRoot;
+use Embryo\Interfaces\VideoInterface;
 
 abstract class Video extends EmbedRoot implements VideoInterface
 {

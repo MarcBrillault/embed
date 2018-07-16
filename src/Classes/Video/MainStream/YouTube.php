@@ -1,8 +1,8 @@
 <?php
 
-namespace Embryo\Embed\Classes\Video\MainStream;
+namespace Embryo\Classes\Video\MainStream;
 
-use Embryo\Embed\Classes\Video;
+use Embryo\Classes\Video;
 
 class YouTube extends Video
 {

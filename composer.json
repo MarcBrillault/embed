@@ -11,11 +11,11 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "Embryo\\Embed\\": "src"
+      "Embryo\\": "src"
     }
   },
   "scripts": {
-    "writeCacheFile": "Embryo\\Embed\\Installer::writeCacheFile",
+    "writeCacheFile": "Embryo\\EmbedInstaller::writeCacheFile",
     "post-autoload-dump": "@writeCacheFile",
     "post-package-install": "@writeCacheFile",
     "post-package-update": "@writeCacheFile"

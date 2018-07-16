@@ -1,8 +1,8 @@
 <?php
 
-namespace Embryo\Embed;
+namespace Embryo;
 
-use Embryo\Embed\Interfaces\EmbedInterface;
+use Embryo\Interfaces\EmbedInterface;
 
 abstract class EmbedRoot implements EmbedInterface
 {

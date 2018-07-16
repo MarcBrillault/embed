@@ -16,7 +16,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 $url = 'https://www.youtube.com/watch?v=2_HXUhShhmY';
 
-$embed = new \Embryo\Embed\Embed($url);
+$embed = new \Embryo\Embed($url);
 echo $embed->getEmbeddedCode();
 ```
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Embryo\Embed;
+namespace Embryo;
 
-use Embryo\Embed\Interfaces\EmbedInterface;
+use Embryo\Interfaces\EmbedInterface;
 
-class Installer
+class EmbedInstaller
 {
     /**
      * @var array
@@ -20,7 +20,7 @@ class Installer
         foreach ($paths as $path) {
             $path      = str_replace('/', '\\', $path);
             $path      = str_replace('.php', '', $path);
-            $path      = '\Embryo\Embed\Classes' . $path;
+            $path      = '\Embryo\Classes' . $path;
             $reflexion = new \ReflectionClass($path);
             if (
                 $reflexion->isInstantiable()
