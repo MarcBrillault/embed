@@ -53,6 +53,7 @@ class Embed
         foreach ($this->getRegexpCache() as $regexp => $className) {
             if (preg_match($regexp, $this->url, $matches)) {
                 $class = $this->getClass($className);
+                $class->setUrl($matches[0]);
                 $class->setId($matches[1]);
 
                 return $class->getEmbedCode();
@@ -64,7 +65,7 @@ class Embed
 
     /**
      * @param string $class
-     * @return \Embryo\Embed\EmbedRoot
+     * @return \Embryo\EmbedRoot
      */
     private function getClass($class)
     {
