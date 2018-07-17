@@ -1,3 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/b0539914aa24194fd50d/maintainability)](https://codeclimate.com/github/MarcBrillault/embed/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b0539914aa24194fd50d/test_coverage)](https://codeclimate.com/github/MarcBrillault/embed/test_coverage)
+
 # Embryo/Embed
 
 This is a library intended to easily embed data from different kind of sources.
