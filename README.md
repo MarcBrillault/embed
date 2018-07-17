@@ -11,7 +11,6 @@ This is a library intended to easily embed data from different kind of sources.
 
 ## Usage
 
-
 ```php
 <?php
 
@@ -24,6 +23,7 @@ echo $embed->getEmbeddedCode();
 ```
 
 Will display :
+
 ```html
 <iframe
     width="400"
@@ -39,19 +39,22 @@ Will display :
 
 Some of the default values can be overridden by editing the correct env value.
 
-We strongly suggest using [phpdotenv](https://github.com/vlucas/phpdotenv) to do so.
+We strongly suggest using [phpdotenv](https://github.com/vlucas/phpdotenv)
+to do so.
 
 Available values are:
+
 - `EMBED_WIDTH` (Used on videos, default value is 400)
 - `EMBED_RATIO` (Used on videos, default value is 16/9)
 
 ## Available sources
 
 - Video services
-    - DailyMotion
-    - Vimeo
-    - Youtube
-    
+  - DailyMotion
+  - Vimeo
+  - Youtube
+
 ## Suggesting another source
 
-All suggestions are welcome, just create an issue here : https://github.com/MarcBrillault/embed/issues
+All suggestions are welcome, [just create an issue here : https://github.com/MarcBrillault/embed/issues]
+(https://github.com/MarcBrillault/embed/issues)
