@@ -56,5 +56,4 @@ Available values are:
 
 ## Suggesting another source
 
-All suggestions are welcome, [just create an issue here : https://github.com/MarcBrillault/embed/issues]
-(https://github.com/MarcBrillault/embed/issues)
+All suggestions are welcome, just create an issue here : (https://github.com/MarcBrillault/embed/issues)
