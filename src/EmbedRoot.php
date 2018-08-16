@@ -21,7 +21,12 @@ abstract class EmbedRoot implements EmbedInterface
      */
     protected $url;
 
-    /***
+    /**
+     * @var int
+     */
+    protected $width;
+
+    /**
      * @var string
      */
     protected $embedCode;
@@ -30,6 +35,8 @@ abstract class EmbedRoot implements EmbedInterface
      * @var string
      */
     protected $template;
+
+    const DEFAULT_WIDTH = 400;
 
     /**
      * Url to call to get the embedded content
@@ -112,6 +119,15 @@ abstract class EmbedRoot implements EmbedInterface
     }
 
     /**
+     * @param string $results
+     * @return string
+     */
+    public function getEmbedCodeFromUrlResults($results)
+    {
+        return $results;
+    }
+
+    /**
      * @return string
      */
     public function getEmbedCode()
@@ -121,6 +137,26 @@ abstract class EmbedRoot implements EmbedInterface
         }
 
         return $this->embedCode;
+    }
+
+    /**
+     * @param int $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWidth()
+    {
+        if ($this->width) {
+            return $this->width;
+        }
+
+        return getenv('EMBED_WIDTH') ?: self::DEFAULT_WIDTH;
     }
 
     /**
