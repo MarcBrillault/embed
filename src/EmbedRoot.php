@@ -94,6 +94,14 @@ abstract class EmbedRoot implements EmbedInterface
         return $this->url;
     }
 
+    /**
+     * @return string
+     */
+    public function getEncodedUrl()
+    {
+        return urlencode($this->getUrl());
+    }
+
     protected function setEmbedCode()
     {
         $replaces = [];
