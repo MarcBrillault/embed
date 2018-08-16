@@ -10,11 +10,6 @@ abstract class Video extends EmbedRoot implements VideoInterface
     /**
      * @var int
      */
-    protected $width;
-
-    /**
-     * @var int
-     */
     protected $height;
 
     /**
@@ -22,16 +17,7 @@ abstract class Video extends EmbedRoot implements VideoInterface
      */
     protected $ratio;
 
-    const DEFAULT_WIDTH = 400;
     const DEFAULT_RATIO = 16 / 9;
-
-    /**
-     * @param int $width
-     */
-    public function setWidth($width)
-    {
-        $this->width = $width;
-    }
 
     /**
      * @return int
