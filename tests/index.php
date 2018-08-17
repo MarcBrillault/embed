@@ -35,7 +35,6 @@ $html = <<<HTML
 	</head>
 	<body>
 		%s
-		<a data-pin-do="embedPin" data-pin-lang="fr" data-pin-width="large" href="https://www.pinterest.com/pin/142567144438259038/"></a>
 		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 	</body>
 </html>
