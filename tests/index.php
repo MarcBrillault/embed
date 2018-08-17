@@ -9,24 +9,54 @@ putenv('EMBED_LANG=fr');
 \Embryo\EmbedInstaller::writeCacheFile();
 
 $urls = [
-    'https://www.youtube.com/watch?v=Us6TDxO9ItM',
-    'https://www.dailymotion.com/video/x6ok5hl',
-    'https://vimeo.com/41174743',
-    'https://www.facebook.com/20531316728/posts/10154009990506729/',
-    'https://twitter.com/SVimaire/status/1019128561100312577',
-    'https://twitter.com/MarcBrillault/status/956183104368074753',
-    'https://twitter.com/mathrobin/status/1018758932557369344',
-    'https://twitter.com/mic/status/1018828090653282305',
+    'https://www.youtube.com/watch?v=VV6QeZFaVSQ',
+    'https://www.dailymotion.com/video/x6rvo2t',
+    'https://vimeo.com/45579112',
+    'https://twitter.com/NASA/status/1029125700580716544',
+    'https://www.instagram.com/p/BkTYuD3Ao53/?taken-by=nasa',
+    'https://www.pinterest.com/pin/142567144438259038/',
+    'https://www.facebook.com/NASA/videos/682804158742219/',
 ];
+
+$html = <<<HTML
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+		    .embryoEmbed {
+		        max-width: 400px; 
+		        margin: auto;
+		    }
+        </style>
+	</head>
+	<body>
+		%s
+		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+		<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+	</body>
+</html>
+HTML;
+
+$contents = '';
 
 foreach ($urls as $url) {
     $embed = new \Embryo\Embed($url);
     try {
-        echo $embed->getEmbeddedCode();
+        $contents .= $embed->getEmbeddedCode();
     } catch (\Embryo\Exceptions\EmbedException $e) {
-        echo $e->getMessage() . '<br>';
+        $contents .= $e->getMessage() . '<br>';
     }
 }
 
-
-
+printf($html, $contents);

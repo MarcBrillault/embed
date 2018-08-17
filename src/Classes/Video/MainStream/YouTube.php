@@ -13,13 +13,15 @@ class YouTube extends Video
     ];
 
     protected $template = <<<'TEMPLATE'
-<iframe
-    width="{WIDTH}"
-    height="{HEIGHT}"
-    src="https://www.youtube.com/embed/{ID}"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-</iframe>
+<div class="embryoEmbed">
+    <iframe
+        width="{WIDTH}"
+        height="{HEIGHT}"
+        src="https://www.youtube.com/embed/{ID}"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</div>
 TEMPLATE;
 }
