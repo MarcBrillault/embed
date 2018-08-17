@@ -14,6 +14,7 @@ $urls = [
     'https://vimeo.com/45579112',
     'https://twitter.com/NASA/status/1029125700580716544',
     'https://www.instagram.com/p/BkTYuD3Ao53/?taken-by=nasa',
+    'https://www.pinterest.com/pin/142567144438259038/',
 ];
 
 $html = <<<HTML
@@ -34,6 +35,7 @@ $html = <<<HTML
 	</head>
 	<body>
 		%s
+		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 	</body>
 </html>
 HTML;
