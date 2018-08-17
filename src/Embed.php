@@ -54,7 +54,9 @@ class Embed
             if (preg_match($regexp, $this->url, $matches)) {
                 $class = $this->getClass($className);
                 $class->setUrl($matches[0]);
-                $class->setId($matches[1]);
+                if (array_key_exists(1, $matches)) {
+                    $class->setId($matches[1]);
+                }
 
                 return $class->getEmbedCode();
             }

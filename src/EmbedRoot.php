@@ -36,8 +36,6 @@ abstract class EmbedRoot implements EmbedInterface
      */
     protected $template;
 
-    const DEFAULT_WIDTH = 400;
-
     /**
      * Url to call to get the embedded content
      *
@@ -50,7 +48,8 @@ abstract class EmbedRoot implements EmbedInterface
      */
     protected $embedUrlMethod;
 
-    const DEFAULT_LANG = 'en';
+    const DEFAULT_LANG  = 'en';
+    const DEFAULT_WIDTH = 400;
 
     public final function __construct() { }
 
@@ -92,6 +91,14 @@ abstract class EmbedRoot implements EmbedInterface
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEncodedUrl()
+    {
+        return urlencode($this->getUrl());
     }
 
     protected function setEmbedCode()
@@ -239,4 +246,5 @@ abstract class EmbedRoot implements EmbedInterface
     {
         return getenv('EMBED_LANG') ?: self::DEFAULT_LANG;
     }
+
 }

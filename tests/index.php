@@ -15,6 +15,7 @@ $urls = [
     'https://twitter.com/NASA/status/1029125700580716544',
     'https://www.instagram.com/p/BkTYuD3Ao53/?taken-by=nasa',
     'https://www.pinterest.com/pin/142567144438259038/',
+    'https://www.facebook.com/NASA/videos/682804158742219/',
 ];
 
 $html = <<<HTML
@@ -36,6 +37,13 @@ $html = <<<HTML
 	<body>
 		%s
 		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+		<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 	</body>
 </html>
 HTML;
