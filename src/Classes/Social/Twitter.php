@@ -21,6 +21,6 @@ class Twitter extends Social implements ExternalUrlInterface
     {
         $data = json_decode($results, true);
 
-        return (string) $data['html'];
+        return sprintf('<div class="embryoEmbed">%s</div>', (string) $data['html']);
     }
 }

@@ -12,15 +12,17 @@ class Vimeo extends Video
     ];
 
     protected $template = <<<'TEMPLATE'
-<iframe
-    src="https://player.vimeo.com/video/{ID}"
-    width="{WIDTH}"
-    height="{HEIGHT}"
-    frameborder="0"
-    webkitallowfullscreen
-    mozallowfullscreen
-    allowfullscreen>
-</iframe>
+<div class="embryoEmbed">
+    <iframe
+        src="https://player.vimeo.com/video/{ID}"
+        width="{WIDTH}"
+        height="{HEIGHT}"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+</div>
 TEMPLATE;
 
 }
