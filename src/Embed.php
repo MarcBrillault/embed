@@ -17,9 +17,20 @@ class Embed
     private $regexpCache;
 
     /**
+     * @var string
+     */
+    private $className;
+
+    /**
+     * @var array
+     */
+    private $regexpMatches;
+
+    /**
      * Embed constructor.
      *
      * @param string $url
+     * @throws \Embryo\Exceptions\EmbedException
      */
     public function __construct($url = '')
     {
@@ -29,11 +40,13 @@ class Embed
     }
 
     /**
-     * @param string $url
+     * @param $url
+     * @throws \Embryo\Exceptions\EmbedException
      */
     public function setUrl($url)
     {
         $this->url = $url;
+        $this->setClassName();
     }
 
     /**
@@ -46,19 +59,30 @@ class Embed
 
     /**
      * @return string
-     * @throws \Embryo\Exceptions\EmbedException
      */
     public function getEmbeddedCode()
     {
+        $class = $this->getClass($this->className);
+        $class->setUrl($this->regexpMatches[0]);
+        if (array_key_exists(1, $this->regexpMatches)) {
+            $class->setId($this->regexpMatches[1]);
+        }
+
+        return $class->getEmbedCode();
+    }
+
+    /**
+     * @return void
+     * @throws \Embryo\Exceptions\EmbedException
+     */
+    private function setClassName()
+    {
         foreach ($this->getRegexpCache() as $regexp => $className) {
             if (preg_match($regexp, $this->url, $matches)) {
-                $class = $this->getClass($className);
-                $class->setUrl($matches[0]);
-                if (array_key_exists(1, $matches)) {
-                    $class->setId($matches[1]);
-                }
+                $this->className     = $className;
+                $this->regexpMatches = $matches;
 
-                return $class->getEmbedCode();
+                return;
             }
         }
 
@@ -72,6 +96,25 @@ class Embed
     private function getClass($class)
     {
         return new $class();
+    }
+
+    /**
+     * @return string
+     */
+    public function getProviderClass()
+    {
+        return $this->className;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProviderName()
+    {
+        $className = $this->getProviderClass();
+        $explode   = explode('\\', $className);
+
+        return array_pop($explode);
     }
 
     /**
