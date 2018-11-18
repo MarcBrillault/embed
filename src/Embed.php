@@ -120,6 +120,14 @@ class Embed
     /**
      * @return array
      */
+    public function getMatches()
+    {
+        return $this->regexpMatches;
+    }
+
+    /**
+     * @return array
+     */
     private function getRegexpCache()
     {
         if (is_null($this->regexpCache)) {
