@@ -12,7 +12,7 @@ class EmbedInstaller
     private $regexpList;
 
     const CACHE_FILENAME = 'regexpCache.json';
-    const DIR_NAME       = '/classes';
+    const DIR_NAME       = '/Classes';
 
     private function setRegexpList()
     {
